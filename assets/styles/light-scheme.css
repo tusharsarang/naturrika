@@ -1,0 +1,26 @@
+@import "common.css";
+
+.home {
+  background-image: url("./../light-bg.jpg");
+}
+
+#naturrikaLeafLogoImage {
+  content: url("./../brand/leaf_logo_black.png");
+}
+
+#naturrikaTextLogoImage {
+  content: url("./../brand/naturrika_black.png");
+}
+
+.nav div.nav_list ul li a {
+  color: black;
+}
+
+.nav div.nav_list ul li a:hover {
+  color: red;
+}
+
+.affix {
+    padding: 0;
+    background-color:white;
+  }
