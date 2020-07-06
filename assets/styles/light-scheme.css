@@ -1,5 +1,10 @@
 @import "common.css";
 
+:root {
+  --light-bg-primary: #FDFDFD;
+  --light-bg-secondary: #F0EFEF;
+}
+
 .home {
   background-image: url("./../light-bg.jpg");
 }
@@ -21,6 +26,6 @@
 }
 
 .affix {
-    padding: 0;
-    background-color:white;
-  }
+  padding: 0;
+  background-color: var(--light-bg-primary);
+}

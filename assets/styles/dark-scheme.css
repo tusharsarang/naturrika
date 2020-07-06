@@ -1,5 +1,10 @@
 @import "common.css";
 
+:root {
+  --dark-bg-primary: #131215;
+  --dark-bg-secondary: #686e81;
+}
+
 .home {
   background-image: url("./../dark-bg.jpg");
 }
@@ -22,5 +27,5 @@
 
 .affix {
   padding: 0;
-  background-color: black;
+  background-color: var(--dark-bg-primary);
 }
