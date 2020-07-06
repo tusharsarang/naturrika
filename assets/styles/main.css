@@ -1,0 +1,30 @@
+@import "nav.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+#naturrikaLeafLogoImage {
+  height: 36px;
+  padding-right: 1.5rem;
+  content: var(--naturrik-leaf-logo-url);
+}
+
+#naturrikaTextLogoImage {
+  height: 36px;
+  content: var(--naturrika-text-logo-url);
+}
+
+.home {
+  width: 100vw;
+  height: 100vh;
+  background-position: center top;
+  background-size: cover;
+  background-image: var(--home-bg-image-url);
+}

@@ -1,31 +1,9 @@
-@import "common.css";
-
 :root {
-  --light-bg-primary: #FDFDFD;
-  --light-bg-secondary: #F0EFEF;
-}
-
-.home {
-  background-image: url("./../light-bg.jpg");
-}
-
-#naturrikaLeafLogoImage {
-  content: url("./../brand/leaf_logo_black.png");
-}
-
-#naturrikaTextLogoImage {
-  content: url("./../brand/naturrika_black.png");
-}
-
-.nav div.nav_list ul li a {
-  color: black;
-}
-
-.nav div.nav_list ul li a:hover {
-  color: red;
-}
-
-.affix {
-  padding: 0;
-  background-color: var(--light-bg-primary);
+  --bg-primary-color: #FDFDFD;
+  --bg-secondary-color: #F0EFEF;  
+  --text-primary-color: #131215;
+  --text-on-hover-color: #686e81;
+  --home-bg-image-url: url("./../light-bg.jpg");
+  --naturrik-leaf-logo-url: url("./../brand/leaf_logo_black.png");
+  --naturrika-text-logo-url: url("./../brand/naturrika_black.png");
 }
