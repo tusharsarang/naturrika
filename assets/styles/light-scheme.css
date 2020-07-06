@@ -1,0 +1,9 @@
+:root {
+  --bg-primary-color: #FDFDFD;
+  --bg-secondary-color: #F0EFEF;  
+  --text-primary-color: #131215;
+  --text-on-hover-color: #686e81;
+  --home-bg-image-url: url("./../light-bg.jpg");
+  --naturrik-leaf-logo-url: url("./../brand/leaf_logo_black.png");
+  --naturrika-text-logo-url: url("./../brand/naturrika_black.png");
+}
