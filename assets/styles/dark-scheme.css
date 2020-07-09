@@ -1,6 +1,7 @@
 :root {
   --bg-primary-color: #131215;
-  --bg-secondary-color: #686e81;  
+  --bg-secondary-color: #686e81;
+  --home-slogan-overlay: rgba(0, 0, 0, 0.8);
   --primary-text-color: #D4D4D4;
   --text-on-hover-color: #fbab02;
   --home-bg-image-url: url("./../dark-bg.jpg");

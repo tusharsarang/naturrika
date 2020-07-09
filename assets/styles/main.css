@@ -1,4 +1,5 @@
 @import "nav.css";
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
 
 body {
   margin: 0;
@@ -10,21 +11,28 @@ body {
   transition: color 0.5s ease, background-color 0.5s ease;
 }
 
-#naturrikaLeafLogoImage {
-  height: 36px;
-  padding-right: 1.5rem;
-  content: var(--naturrik-leaf-logo-url);
-}
-
-#naturrikaTextLogoImage {
-  height: 36px;
-  content: var(--naturrika-text-logo-url);
-}
-
 .home {
   width: 100vw;
   height: 100vh;
+  position: relative;
   background-position: center top;
   background-size: cover;
   background-image: var(--home-bg-image-url);
+  z-index: 0;
+}
+
+.overlay-text {
+  position: absolute;
+  width: 100%;
+  top: 36%;
+  background: var(--home-slogan-overlay);
+  z-index: 1;
+}
+
+.slogan-text {
+  text-align: center;
+  color: var(--primary-text-color);
+  font-family: 'Merriweather', serif;
+  font-size: 3em;
+  padding: 2% 2%;
 }

@@ -8,6 +8,7 @@
   padding-bottom: 10px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  z-index: 8;
 }
 
 .affix {
@@ -20,6 +21,17 @@
   width: auto;
   height: auto;
   padding-left: 4rem;
+}
+
+#naturrikaLeafLogoImage {
+  height: 36px;
+  padding-right: 1.5rem;
+  content: var(--naturrik-leaf-logo-url);
+}
+
+#naturrikaTextLogoImage {
+  height: 36px;
+  content: var(--naturrika-text-logo-url);
 }
 
 .nav div.nav_list {
