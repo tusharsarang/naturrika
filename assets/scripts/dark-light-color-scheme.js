@@ -1,127 +1,112 @@
-var dark_light_toggle_icon = document.getElementById("ColorSchemeToggleIcon");
+var color_scheme_toggle_button = document.getElementById("ColorSchemeToggleButton");
+var moon_icon = document.getElementById("moonIcon");
+var sun_icon = document.getElementById("sunIcon");
 
-// If `prefers-color-scheme` is not supported, fall back to light mode.
-// In this case, light.css will be downloaded with `highest` priority.
-if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+function enableDarkColorScheme() {
+    document.documentElement.style.display = 'none';
+    document.head.insertAdjacentHTML(
+        'beforeend',
+        '<link rel="stylesheet" href="assets/styles/dark-scheme.css" onload="document.documentElement.style.display = \'\'">'
+    );
+    console.log("🌞 👉🏻 🌚");
+}
 
-    console.log('Browser does not support the `prefers-color-scheme` media query.');
-
-    // Set Light Color Scheme CSS
+function enableLightColorScheme() {
     document.documentElement.style.display = 'none';
     document.head.insertAdjacentHTML(
         'beforeend',
         '<link rel="stylesheet" href="assets/styles/light-scheme.css" onload="document.documentElement.style.display = \'\'">'
     );
+    console.log("🌚 👉🏻 🌞 ");
+}
 
-    // Add Moon Icon & Remove Sun Icon
-    dark_light_toggle_icon.classList.add("fa-moon")
-    dark_light_toggle_icon.classList.remove("fa-sun")
+function hideSunShowMoon() {
+    sun_icon.style.display = 'none';
+    moon_icon.style.display = 'inline';
+    console.log("🌚");
+}
+
+function showSunHideMoon() {
+    sun_icon.style.display = 'inline';
+    moon_icon.style.display = 'none';
+    console.log("🌞");
+}
+
+// If `prefers-color-scheme` is not supported, fall back to light mode.
+if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+    console.warn('Browser does not support the `prefers-color-scheme` media query.');
+
+    // Light Mode
+    enableLightColorScheme();
+    hideSunShowMoon()
 }
 
 // Checks if User Prefers a Dark Color Scheme (False = Light Color Scheme)
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 
-    // User Prefers Dark Mode
-    console.log("🌚");
-
-    // Add Sun Icon & Remove Moon Icon
-    dark_light_toggle_icon.classList.add("fa-sun")
-    dark_light_toggle_icon.classList.remove("fa-moon")
+    // Dark Mode
+    showSunHideMoon()
 
 } else {
 
-    // User Prefers Light Mode
-    console.log("🌞");
+    // Light Mode
+    hideSunShowMoon()
 
-    // Add Moon Icon & Remove Sun Icon
-    dark_light_toggle_icon.classList.add("fa-moon")
-    dark_light_toggle_icon.classList.remove("fa-sun")
 }
 
 // Event Listener to check for any changes in User Color Scheme Preference 
 window.matchMedia('(prefers-color-scheme: dark)').addListener(dark_color_scheme => {
 
     if (dark_color_scheme.matches) {
-        // User Prefers Dark Mode
-        console.log("🌚");
 
-        // Set Dark Color Scheme CSS
-        document.documentElement.style.display = 'none';
-        document.head.insertAdjacentHTML(
-            'beforeend',
-            '<link rel="stylesheet" href="assets/styles/dark-scheme.css" onload="document.documentElement.style.display = \'\'">'
-        );
-
-        // Add Sun Icon & Remove Moon Icon
-        dark_light_toggle_icon.classList.add("fa-sun")
-        dark_light_toggle_icon.classList.remove("fa-moon")
+        // Dark Mode
+        showSunHideMoon()
 
     } else {
 
-        // User Prefers Light Mode
-        console.log("🌞");
+        // Light Mode
+        hideSunShowMoon()
 
-        // Set Light ColorScheme CSS
-        document.documentElement.style.display = 'none';
-        document.head.insertAdjacentHTML(
-            'beforeend',
-            '<link rel="stylesheet" href="assets/styles/light-scheme.css" onload="document.documentElement.style.display = \'\'">'
-        );
-
-        // Add Moon Icon & Remove Sun Icon
-        dark_light_toggle_icon.classList.add("fa-moon")
-        dark_light_toggle_icon.classList.remove("fa-sun")
     }
 });
 
 // On-Click Funtion to Toggle Color Scheme
 function toggleColorScheme() {
 
-    // If Current icon class is Moon implies it's Dark Mode
-    if (dark_light_toggle_icon.classList.contains("fa-moon")) {
+    // If SunIcon display is not NONE, implies it's Dark Mode
+    if (sun_icon.style.display != "none") {
 
-        // Color Scheme Changing form Dark --to--> Light
-        console.log("🌚 👉🏻 🌞 ");
 
-        // Set Dark ColorScheme CSS
-        document.documentElement.style.display = 'none';
-        document.head.insertAdjacentHTML(
-            'beforeend',
-            '<link rel="stylesheet" href="assets/styles/dark-scheme.css" onload="document.documentElement.style.display = \'\'">'
-        );
+        // Set Light Mode
+        enableLightColorScheme();
 
-        // Remove Moon Icon & Add Sun Icon 
-        dark_light_toggle_icon.classList.remove("fa-moon")
-        dark_light_toggle_icon.classList.add("fa-sun")
+        hideSunShowMoon()
 
     } else {
 
-        // Color Scheme Changing form Light --to--> Dark
-        console.log("🌞 👉🏻 🌚");
+        // Set Dark Mode
+        enableDarkColorScheme();
 
-        // Set Light ColorScheme CSS
-        document.documentElement.style.display = 'none';
-        document.head.insertAdjacentHTML(
-            'beforeend',
-            '<link rel="stylesheet" href="assets/styles/light-scheme.css" onload="document.documentElement.style.display = \'\'">'
-        );
-
-        // Remove Sun Icon & Add Moon Icon
-        dark_light_toggle_icon.classList.remove("fa-sun")
-        dark_light_toggle_icon.classList.add("fa-moon")
+        showSunHideMoon()
 
     }
 
 }
 
+color_scheme_toggle_button.addEventListener('mouseover', function () {
+    console.log("🐭over");
+    sun_icon.classList.remove("material-icons-outlined")
+    sun_icon.classList.add("material-icons")
 
-$(document).ready(function () {
-    $("#ColorSchemeToggleIcon").mouseover(function () {
-        dark_light_toggle_icon.classList.remove("far")
-        dark_light_toggle_icon.classList.add("fas")
-    });
-    $("#ColorSchemeToggleIcon").mouseout(function () {
-        dark_light_toggle_icon.classList.remove("fas")
-        dark_light_toggle_icon.classList.add("far")
-    });
+    moon_icon.classList.remove("material-icons-outlined")
+    moon_icon.classList.add("material-icons")
+});
+
+color_scheme_toggle_button.addEventListener('mouseout', function () {
+    console.log("🐭out");
+    sun_icon.classList.add("material-icons-outlined")
+    sun_icon.classList.remove("material-icons")
+
+    moon_icon.classList.add("material-icons-outlined")
+    moon_icon.classList.remove("material-icons")
 });
