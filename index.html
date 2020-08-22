@@ -32,35 +32,30 @@
 
 <body id="page-top">
 
-    <!-- Navigation-->
-    <nav class="nav navbar-expand-lg static-top">
-        <div class="container">
-            <div class="logo">
-                <a class="navbar-brand" id="naturrikaLogo" href="#">
-                    <img id="naturrikaLeafLogoImage" />
-                    <img id="naturrikaTextLogoImage" />
+    <header class="header">
+
+        <!-- Navigation-->
+        <nav class="nav navbar-expand-lg static-top">
+            <div class="container">
+                
+                <!-- Brand Logo -->
+                <div class="logo">
+                    <a class="navbar-brand" id="naturrikaLogo" href="#">
+                        <img id="naturrikaLeafLogoImage" />
+                        <img id="naturrikaTextLogoImage" />
+                    </a>
+                </div>
+
+                <!-- Color Scheme Toggle -->
+                <a id="ColorSchemeToggleButton" class="d-inline-flex color-scheme-toggle" onclick="toggleColorScheme()" href="#">
+                    <i id="moonIcon" class="material-icons-outlined" title="Switch To Light Mode">brightness_2</i>
+                    <i id="sunIcon" class="material-icons-outlined" title="Switch To Dark Mode">wb_sunny</i>
                 </a>
+
             </div>
-            <div class="nav_list" id="navList">
-                <ul class="navlinks">
-                    <!-- <li><a href="#">About</a></li> -->
-                    <!-- <li><a href="#">Portfolio</a></li> -->
-                    <!-- <li><a href="#">Services</a></li> -->
-                    <li>
-                        <a id="ColorSchemeToggleButton" onclick="toggleColorScheme()" href="#">
-                            <i id="moonIcon" class="material-icons-outlined" title="Switch To Light Mode">brightness_2</i>
-                            <i id="sunIcon" class="material-icons-outlined" title="Switch To Dark Mode">wb_sunny</i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <span class="navTrigger">
-                <i></i>
-                <i></i>
-                <i></i>
-            </span>
-        </div>
-    </nav>
+        </nav>
+
+    </header>
 
     <!-- Home Section -->
     <section class="home">
